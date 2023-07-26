@@ -1,7 +1,5 @@
 package tp2;
 
-import javax.sound.midi.SysexMessage;
-
 public class Exe2 {
 	//Conversion degrés Fahrenheit vers Celsius
 	
