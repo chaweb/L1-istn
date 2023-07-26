@@ -2,30 +2,88 @@ package tp5;
 
 public class Exe3 {
 
-	// TODO: écrivez ici la fonction de la question 3.a
 
-	// TODO : écrivez ici la fonction "compose" de la question 3.b
+	public static void printlog(int[] tab){
+		System.out.print("|");
+		for(int i=0; i < tab.length; i++){
+			System.out.print(tab[i] + "|");
+		}
+		System.out.println();
+	}
 
-	// Challenge : écrivez ici la fonction "itere" de la question 3.c
+	public static int maxValueTab(int[] tab){
+		int max = tab[0];
+		for(int i=1; i< tab.length; i++ ){
+			if(max < tab[i]){
+				max = tab[i];
+			}
+		}
+		return max;
+	}
 
-	// TODO : écrivez ici la fonction "inverse" de la question 3.d
+	public static void tri(int[] tab){
+		for (int i = 0; i < tab.length - 1; i++)  
+		{
+			 int index = i;  
+			 for (int j = i + 1; j < tab.length; j++)
+			 {
+				  if (tab[j] < tab[index]){ 
+					   index = j;
+				  }
+			 }
+
+			 int min = tab[index];
+			 tab[index] = tab[i]; 
+			 tab[i] = min;
+		}
+	}
+
+	public static int[] range(int i){
+		int[] tab = new int[i];
+		for(int j = 0; j < i; j++){
+			tab[j] = j;
+		}
+		return tab;
+	}
+	public static boolean estPermutation(int[] tab){
+		int[] permute = range(tab.length);
+		for(int i=0; i< permute.length; i++){
+			for(int j=0; j<tab.length; j++){
+				if(permute[i] == tab[j]){
+					break;
+				}
+				if(j == tab.length-1){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	public static int[] compose(int[] tab1, int[] tab2) {
+		int[] tab = new int[tab1.length];
+
+		for(int j = 0; j < tab.length ; j++){
+			tab[j] = tab2[tab1[j]];
+		}
+
+		return tab;
+	}
+
+	public static int[] itere(int[] tab, int i, int k){
+		// todo : merde ! 
+	}
+
 
 	public static void main(String[] args) {
 		int[] t1 = { 1, 3, 4, 2, 0 }; // t1 est une permutation
-		int[] t2 = { 5, 1, 4 }; // t2 n'est pas une permutation
+		int[] t2 = { 3,3,3 }; // t2 n'est pas une permutation
 		int[] t3 = { 1, 0, 2, 4, 3 }; // t3 est une permutation
 
-		// Faites vos propres tests ici à l'aide des tableaux ci-dessus et d'une
-		// fonction d'affichage de tableau. Vous pouvez définir d'autre tableaux qui
-		// sont des permutations (ou non), pour tester davantage vos fonctions.
-
-		// Quand vous aurez convenablement testé vos fonctions,
-		// vous pourrez utiliser le fichier de test Exe3Test.java.
-		// 1. Décommentez les tests concernant les fonctions que vous avez écrites
-		// 2. Vérifiez que votre projet compile correctement sans erreur
-		// 3. Exécutez les tests du fichier (clic-droit sur le fichier -> Run as ->
-		// JUnit test)
-
-		// Bonus : écrivez ici des exemples pour la question 3.e
+		
+		System.out.println(estPermutation(t1));
+		System.out.println(estPermutation(t2));
+		System.out.println(estPermutation(t3));
+		printlog(compose(t1, t3));
 	}
 }

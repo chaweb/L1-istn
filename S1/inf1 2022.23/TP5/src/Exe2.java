@@ -8,7 +8,6 @@ public class Exe2 {
 		}
 		System.out.println();
 	}
-	// Challenge : écrivez ici la fonction "fusionTrie" de la question 2.a
 	public static int[] concatenation(int[] tab1, int[] tab2){
 		int[] tmp = new int[tab1.length + tab2.length];
 		for(int i=0; i < tab1.length; i++){
